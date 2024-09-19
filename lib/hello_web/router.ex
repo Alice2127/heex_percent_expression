@@ -18,6 +18,13 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/users", UsersLive.Index, :index
+    live "/users/new", UsersLive.Index, :new
+    live "/users/:id/edit", UsersLive.Index, :edit
+
+    live "/users/:id", UsersLive.Show, :show
+    live "/users/:id/show/edit", UsersLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
