@@ -22,6 +22,12 @@ defmodule HelloWeb.UsersLiveTest do
       assert html =~ "Hello World!"
     end
 
+    test "render today's date", %{conn: conn, users: users} do
+      {:ok, _index_live, html} = live(conn, ~p"/users")
+
+      assert html =~ Date.utc_today |> to_string()
+    end
+
     test "lists all users", %{conn: conn, users: users} do
       {:ok, _index_live, html} = live(conn, ~p"/users")
 

@@ -7,4 +7,8 @@ defmodule HelloWeb.PageHTML do
   use HelloWeb, :html
 
   embed_templates "page_html/*"
+
+  def render_today do
+    Date.utc_today()
+  end
 end
