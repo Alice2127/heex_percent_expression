@@ -84,6 +84,10 @@ defmodule HelloWeb.UsersLiveTest do
     test "deletes users in listing", %{conn: conn, users: users} do
       {:ok, index_live, _html} = live(conn, ~p"/users")
 
+      # TODO テストの作成
+      # html = index_live |> element("#users-#{users.id} a ") |> render_click()
+      # assert html =~ "Are you sure you want to delete #{users.name} ?"
+
       assert index_live |> element("#users-#{users.id} a", "Delete") |> render_click()
       refute has_element?(index_live, "#users-#{users.id}")
     end
