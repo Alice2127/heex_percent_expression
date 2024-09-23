@@ -26,7 +26,7 @@
   <:action :let={{id, users}}>
     <.link
       phx-click={JS.push("delete", value: %{id: users.id}) |> hide("##{id}")}
-      data-confirm="Are you sure?"
+      data-confirm={"Are you sure you want to delete #{users.name}?"}
     >
       Delete
     </.link>
