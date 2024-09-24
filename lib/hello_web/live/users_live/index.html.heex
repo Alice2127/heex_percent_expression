@@ -17,6 +17,7 @@
 >
   <:col :let={{_id, users}} label="Name"><%= users.name %></:col>
   <:col :let={{_id, users}} label="Age"><%= users.age %></:col>
+  <:col :let={{_id, users}} label="Registered day"><%= users.inserted_at %></:col>
   <:action :let={{_id, users}}>
     <div class="sr-only">
       <.link navigate={~p"/users/#{users}"}>Show</.link>
